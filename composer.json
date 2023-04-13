@@ -1,0 +1,22 @@
+{
+    "name": "maxiaozhi/open1688",
+    "keywords": [
+        "1688",
+        "open1688"
+    ],
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Open1688\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lion",
+            "email": "19340091@qq.com"
+        }
+    ]
+}
