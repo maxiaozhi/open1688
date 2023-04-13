@@ -84,7 +84,7 @@ class Client
      */
     public function prepareParams(&$api, &$params)
     {
-        $urlPath = $this->parseApi($api);
+        $api = $this->parseApi($api);
         $params += [
             'access_token' => $this->accessToken,
             '_aop_timestamp' => (new \DateTime())->format('Uv'),
@@ -92,7 +92,7 @@ class Client
         foreach ($params as &$param) {
             $param = is_string($param) ? $param : json_encode($param, JSON_UNESCAPED_UNICODE);
         }
-        $params['_aop_signature'] = $this->getSign($urlPath, $params);
+        $params['_aop_signature'] = $this->getSign($api, $params);
 
     }
 
